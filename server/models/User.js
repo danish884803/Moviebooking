@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-  id: {
+  _id: {
     type: String,
-    required: true
+    required: true,
   },
   name: {
     type: String,
@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema({
   }
 });
 
+// Mongoose won't create a separate `id` field, `_id` is enough
 const User = mongoose.model('User', userSchema);
 
 export default User;
