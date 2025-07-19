@@ -26,6 +26,7 @@ const App = () => {
 
       {/* Show Navbar only if not in /admin route */}
       {!isAdminRoute && <Navbar />}
+      
 
       <Routes>
         <Route path='/' element={<Home />} />
@@ -60,10 +61,21 @@ export default App;
 // import Favourite from './pages/Favourite'
 // import {Toaster} from 'react-hot-toast'
 // import Footer from './components/Footer'
+// import { useAppContext } from './context/AppContext'
+// import { Layout } from 'lucide-react'
+// import Dashboard from './pages/Admin/Dashboard'
+// import AddShows from './pages/Admin/Addshows'
+// import ListShows from './pages/Admin/Listshows'
+// import ListBookings from './pages/Admin/Listbooking'
+// import { SignIn } from '@clerk/clerk-react'
+
 // const App = () => {
-//   const isAdminRoute=useLocation().pathname.startsWith('./admin')
+//   const isAdminRoute=useLocation().pathname.startsWith('/admin')
+// const {user}= useAppContext()
+
 //   return (
-//     <div>
+//     <>
+//     <Toaster/>
 //       {!isAdminRoute && <Navbar/>}
 //       <Routes>
 //         <Route path='/' element={<Home/>}/>
@@ -72,12 +84,17 @@ export default App;
 //         <Route path='/movies/:id/:date' element={<SeatLayout/>}/>
 //         <Route path='/my-bookings' element={<MyBooking/>}/>
 //         <Route path='/favorite' element={<Favourite/>}/>
-
+//             <Route path='/admin/*' element={ <Layout/> }/>
+//         <Route index  element={<Dashboard/>}/>
+//          <Route path="add-shows" element={<AddShows/>}/>
+//          <Route path="list-shows" element={<ListShows/>}/>
+//          <Route path="list-bookings" element={<ListBookings/>}/>
 //       </Routes>
 //             {!isAdminRoute && <Footer/>}
 
-//     </div>
+//     </>
 //   )
 // }
 
 // export default App
+
